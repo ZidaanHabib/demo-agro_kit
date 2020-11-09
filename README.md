@@ -31,9 +31,7 @@ https://github.com/ZidaanHabib/demo-agro_kit
 Information of installing the agro_kit API can be found at:
 https://github.com/ZidaanHabib/agro_kit/blob/master/README.rst
 
-https://github.com/ZidaanHabib/agro_kit
-
-Link to agro_kit: git@github.com:ZidaanHabib/agro_kit.git
+Link to agro_kit: https://github.com/ZidaanHabib/agro_kit
 
 
 ## Authors

@@ -5,22 +5,26 @@ import os
 
 
 def setup():
-    global exit
+    """ Method to be used to intialise variables before main() """
+    global exit     #define exit flag to termiante program
     exit = False
-    print("Welcome to the Demo. This a basic overview of some of the functionality in our API.\n" )# Welcome message
-    global myAG
+    print("Welcome to the Demo. This a basic overview of some of the functionality in our API.\n" )     # Welcome message
+    global myAG     # this object will be used in the main method
     myAG = ag.AgroKit()
 
 
 def main():
-    global exit# use global exit var
-    global myAG
-    options = '''1) Read Moisture\n2) Read Lux\n3) Read GPS RMC Message \
-    \n4) Full Read \n5) View profiles file\n6) Create profile\n7) Load profile\n8) Full Read and check within range \n9) Read and log data\n10) View readings logged in last 24hrs\nq) exit'''
+    """ Main method that prompts user for input and does what they want """
+    global exit           # use global exit var
+    global myAG           #use global AgroKit object isntantiated in setup()
+    options = '''1) Read Moisture\n2) Read Lux\n3) Read GPS RMC Message\
+    \n4) Full Read \n5) View profiles file\n6) Create profile\n7) Load profile\n\
+    8) Full Read and check within range \n9) Read and log data\n\
+    10) View readings logged in last 24hrs\nq) exit'''     #these are the user commands
     print(options)
-    cmd = input("\nEnter a command:\n")
+    cmd = input("\nEnter a command:\n")      #prompt use to enter number of command they want to use
     print("\n")
-    if cmd == '1':
+    if cmd == '1':              
         print("Moisture: "+  str(myAG.MS.singleRead()))
     elif cmd == '2':
         light = myAG.LS.singleReadLux()
@@ -62,8 +66,8 @@ def main():
         exit = True
 
 if __name__ == "__main__":
-    setup()
-    while not exit:
+    setup()    #call set up method to intialise exit flag and myAG
+    while not exit:     #loop until exit flag true
         main()
         sleep(0.2)
         print("\n")
